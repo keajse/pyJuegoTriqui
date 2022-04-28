@@ -209,7 +209,6 @@ k = []
 
 shiftPlayer = StringVar()
 
-
 for i in range(0,9):
     k.append("V")
 
@@ -266,7 +265,7 @@ continuar = Button(vnta, text="Nuevos jugadores",width=20, height=2,font=("Arial
 continuar.config(bg="#F94C95", fg="white")
 continuar.place(x=170,y=460)
 
-realizado = Label(vnta, text="Realizado por Laura Juliana Serrano Garcia - Makeajse", bg="#D0DDCE").place(x=100, y=530)
+realizado = Label(vnta, text="Realizado por Laura Juliana Serrano García - Makeajse", bg="#D0DDCE").place(x=100, y=530)
 
 bloquear()
 
