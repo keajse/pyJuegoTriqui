@@ -79,26 +79,119 @@ def cambiar(num):
 def verificar():
     if (k[0]=="X" and k[1]=="X" and k[2]=="X") or (k[3]=="X" and k[4]=="X" and k[5]=="X") or (k[6]=="X" and k[7]=="X" and k[8]=="X"):
         bloquear()
+        ganador()
         messagebox.showinfo("GANADOR", "FELICIDADES " + player1 + ", ¡HAS GANADO!" )
         
     elif (k[0]=="X" and k[3]=="X" and k[6]=="X") or (k[1]=="X" and k[4]=="X" and k[7]=="X") or (k[2]=="X" and k[5]=="X" and k[8]=="X"):
         bloquear()
+        ganador()
         messagebox.showinfo("GANADOR", "FELICIDADES " + player1 + ", ¡HAS GANADO!")
+
     elif (k[0]=="X" and k[4]=="X" and k[8]=="X") or (k[2]=="X" and k[4]=="X" and k[6]=="X"):
         bloquear()
+        ganador()
         messagebox.showinfo("GANADOR", "FELICIDADES " + player1 + ", ¡HAS GANADO!")
     
     elif (k[0]=="O" and k[1]=="O" and k[2]=="O") or (k[3]=="O" and k[4]=="O" and k[5]=="O") or (k[6]=="O" and k[7]=="O" and k[8]=="O"):
         bloquear()
+        ganador()
         messagebox.showinfo("GANADOR", "FELICIDADES " + player2 + ", ¡HAS GANADO!")
+
     elif (k[0]=="O" and k[3]=="O" and k[6]=="O") or (k[1]=="O" and k[4]=="O" and k[7]=="O") or (k[2]=="O" and k[5]=="O" and k[8]=="O"):
         bloquear()
+        ganador()
         messagebox.showinfo("GANADOR", "FELICIDADES " + player2 + ", ¡HAS GANADO!")
+
     elif (k[0]=="O" and k[4]=="O" and k[8]=="O") or (k[2]=="O" and k[4]=="O" and k[6]=="O"):
         bloquear()
+        ganador()
         messagebox.showinfo("GANADOR", "FELICIDADES " + player2 + ", ¡HAS GANADO!")
+
     elif (k[0]!="V" and k[1]!="V" and k[2]!="V" and k[3]!="V" and k[4]!="V" and k[5]!="V" and k[6]!="V" and k[7]!="V" and k[8]!="V") :
         messagebox.showinfo("EMPATE", player1 + " Y " + player2 + ", HAN QUEDADO EN EMPATE" )
+
+def ganador():
+    if (k[0]=="X" and k[1]=="X" and k[2]=="X"):
+        botones[0].config(bg="#6E0A19", fg="white")
+        botones[1].config(bg="#6E0A19", fg="white")
+        botones[2].config(bg="#6E0A19", fg="white")
+
+    elif (k[3]=="X" and k[4]=="X" and k[5]=="X"):
+        botones[3].config(bg="#6E0A19", fg="white")
+        botones[4].config(bg="#6E0A19", fg="white")
+        botones[5].config(bg="#6E0A19", fg="white")
+
+    elif (k[6]=="X" and k[7]=="X" and k[8]=="X"):
+        botones[6].config(bg="#6E0A19", fg="white")
+        botones[7].config(bg="#6E0A19", fg="white")
+        botones[8].config(bg="#6E0A19", fg="white")
+    
+    elif (k[0]=="X" and k[3]=="X" and k[6]=="X"):
+        botones[0].config(bg="#6E0A19", fg="white")
+        botones[3].config(bg="#6E0A19", fg="white")
+        botones[6].config(bg="#6E0A19", fg="white")
+
+    elif (k[1]=="X" and k[4]=="X" and k[7]=="X"):
+        botones[1].config(bg="#6E0A19", fg="white")
+        botones[4].config(bg="#6E0A19", fg="white")
+        botones[7].config(bg="#6E0A19", fg="white")
+
+    elif (k[2]=="X" and k[5]=="X" and k[8]=="X"):
+        botones[2].config(bg="#6E0A19", fg="white")
+        botones[5].config(bg="#6E0A19", fg="white")
+        botones[8].config(bg="#6E0A19", fg="white")
+   
+    elif (k[0]=="X" and k[4]=="X" and k[8]=="X"):
+        botones[0].config(bg="#6E0A19", fg="white")
+        botones[4].config(bg="#6E0A19", fg="white")
+        botones[8].config(bg="#6E0A19", fg="white")
+
+    elif  (k[2]=="X" and k[4]=="X" and k[6]=="X"):
+        botones[2].config(bg="#6E0A19", fg="white")
+        botones[4].config(bg="#6E0A19", fg="white")
+        botones[6].config(bg="#6E0A19", fg="white")
+
+    
+    if (k[0]=="O" and k[1]=="O" and k[2]=="O"):
+        botones[0].config(bg="#6E0A19", fg="white")
+        botones[1].config(bg="#6E0A19", fg="white")
+        botones[2].config(bg="#6E0A19", fg="white")
+
+    elif (k[3]=="O" and k[4]=="O" and k[5]=="O"):
+        botones[3].config(bg="#6E0A19", fg="white")
+        botones[4].config(bg="#6E0A19", fg="white")
+        botones[5].config(bg="#6E0A19", fg="white")
+
+    elif (k[6]=="O" and k[7]=="O" and k[8]=="O"):
+        botones[6].config(bg="#6E0A19", fg="white")
+        botones[7].config(bg="#6E0A19", fg="white")
+        botones[8].config(bg="#6E0A19", fg="white")
+
+    elif (k[0]=="O" and k[3]=="O" and k[6]=="O"):
+        botones[0].config(bg="#6E0A19", fg="white")
+        botones[3].config(bg="#6E0A19", fg="white")
+        botones[6].config(bg="#6E0A19", fg="white")
+
+    elif (k[1]=="O" and k[4]=="O" and k[7]=="O"):
+        botones[1].config(bg="#6E0A19", fg="white")
+        botones[4].config(bg="#6E0A19", fg="white")
+        botones[7].config(bg="#6E0A19", fg="white")
+
+    elif (k[2]=="O" and k[5]=="O" and k[8]=="O"):
+        botones[2].config(bg="#6E0A19", fg="white")
+        botones[5].config(bg="#6E0A19", fg="white")
+        botones[8].config(bg="#6E0A19", fg="white")
+ 
+    elif (k[0]=="O" and k[4]=="O" and k[8]=="O"):
+        botones[0].config(bg="#6E0A19", fg="white")
+        botones[4].config(bg="#6E0A19", fg="white")
+        botones[8].config(bg="#6E0A19", fg="white")
+
+    elif  (k[2]=="O" and k[4]=="O" and k[6]=="O"):
+        botones[2].config(bg="#6E0A19", fg="white")
+        botones[4].config(bg="#6E0A19", fg="white")
+        botones[6].config(bg="#6E0A19", fg="white")
+
 
 vnta = Tk()
 vnta.geometry("420x560")
@@ -115,8 +208,6 @@ botones = []
 k = []
 
 shiftPlayer = StringVar()
-
-
 
 
 for i in range(0,9):
