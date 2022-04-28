@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from tkinter import simpledialog
+import tkinter
 
 def bloquear():
     for i in range(0,9):
@@ -74,10 +75,12 @@ def cambiar(num):
     botones[num].config(state='disable')
     verificar()
 
+
 def verificar():
     if (k[0]=="X" and k[1]=="X" and k[2]=="X") or (k[3]=="X" and k[4]=="X" and k[5]=="X") or (k[6]=="X" and k[7]=="X" and k[8]=="X"):
         bloquear()
         messagebox.showinfo("GANADOR", "FELICIDADES " + player1 + ", ¡HAS GANADO!" )
+        
     elif (k[0]=="X" and k[3]=="X" and k[6]=="X") or (k[1]=="X" and k[4]=="X" and k[7]=="X") or (k[2]=="X" and k[5]=="X" and k[8]=="X"):
         bloquear()
         messagebox.showinfo("GANADOR", "FELICIDADES " + player1 + ", ¡HAS GANADO!")
@@ -112,6 +115,8 @@ botones = []
 k = []
 
 shiftPlayer = StringVar()
+
+
 
 
 for i in range(0,9):
