@@ -1,3 +1,4 @@
+from ast import Continue
 from tkinter import *
 from tkinter import messagebox
 from tkinter import simpledialog
@@ -16,7 +17,6 @@ def jugadoresP():
         k[i] = "V"
     global player1, player2
     
-
     try:
         player1 = simpledialog.askstring("Jugador 1","Escriba el nombre del jugador 1: ").upper()
         if player1 == "":
@@ -26,9 +26,7 @@ def jugadoresP():
             player2 = "JUGADOR 2"
     except Exception as ex:
         print("JUEGO CANCELADO")
-        bloquear()
-
-    
+        bloquear()   
     shiftPlayer.set("Turno: " + player1)
 
 def iniciarP():
@@ -39,9 +37,7 @@ def iniciarP():
         k[i] = "V"
     global player1, player2
     
-
     if player1 == "":
-
         try:
             player1 = simpledialog.askstring("Jugador 1","Escriba el nombre del jugador 1: ").upper()
             if player1 == "":
@@ -52,17 +48,8 @@ def iniciarP():
         except Exception as ex:
            print("JUEGO CANCELADO")
            bloquear()
-
     
     shiftPlayer.set("Turno: " + player1)
-    
-def validarCampos():
-    x=0
-    for num in range(0,9):
-        if k[num]=="X":
-            x= x+1
-            
-    #print(x)
 
 def cambiar(num):
     global turno, player1, player2
@@ -73,7 +60,7 @@ def cambiar(num):
         elif k[i]=="O":
             y= y+1
             
-    if x <=3 and y <3:
+    if x <3 or y <3:
         if k[num] == "V" and turno==0:
             botones[num].config(text="X")
             botones[num].config(bg="#FAC3E7", fg="black")
@@ -87,7 +74,6 @@ def cambiar(num):
                 k[num]="O"
                 turno = 0
                 shiftPlayer.set("Turno: " + player1)
-        #botones[num].config(state='disable')
         verificar()
     else:
         
@@ -95,17 +81,13 @@ def cambiar(num):
             botones[num].config(text="")
             botones[num].config(bg="#88D5F5")
             k[num]="V"
-            turno=1
-            shiftPlayer.set("Turno: " + player2)
+            Continue
+
         elif k[num]=="O" and turno ==1:
             botones[num].config(text="")
             botones[num].config(bg="#88D5F5")
             k[num]="V"
-            turno=0
-            shiftPlayer.set("Turno: " + player1)
-    print(k)
-     
-
+            Continue
 
 def verificar():
     if (k[0]=="X" and k[1]=="X" and k[2]=="X") or (k[3]=="X" and k[4]=="X" and k[5]=="X") or (k[6]=="X" and k[7]=="X" and k[8]=="X"):
@@ -223,19 +205,17 @@ def ganador():
         botones[4].config(bg="#6E0A19", fg="white")
         botones[6].config(bg="#6E0A19", fg="white")
 
-
 vnta = Tk()
-vnta.geometry("420x560")
+vnta.geometry("420x580")
 vnta.title("Paz y bien Jugadores...")
 vnta.config(bg="#D0DDCE")
-vnta.maxsize(width=420, height=560)
+vnta.maxsize(width=420, height=580)
 
 turno = 0
 player1 = ""
 player2 = ""
 
 botones = []
-
 k = []
 
 shiftPlayer = StringVar()
@@ -297,6 +277,7 @@ continuar.config(bg="#F94C95", fg="white")
 continuar.place(x=170,y=460)
 
 realizado = Label(vnta, text="Realizado por Laura Juliana Serrano García - Makeajse", bg="#D0DDCE").place(x=100, y=530)
+idea = Label(vnta, text="Actividad propuesta por Ivan - Comfama 2022", bg="#D0DDCE").place(x=100, y=550)
 
 bloquear()
 
